@@ -12,7 +12,7 @@ oneoz = 30
 onehalfoz = 45
 twooz = 60
 volume = 0
-GPIN = 33
+GPIN = 35
 
 # GPIO Pin Setup
 GPIO.setmode(GPIO.BOARD)

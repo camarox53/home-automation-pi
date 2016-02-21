@@ -46,7 +46,7 @@ elif options.amount == "twooz":
         pump(twooz)
 elif options.amount == "halfoz":
         print "A half an Ounce is Selected"
-                pump(halfoz)
+        pump(halfoz)
 elif options.amount == "onehalfoz":
         print "One Half of an Ounce is Selected"
         pump(onehalfoz)
