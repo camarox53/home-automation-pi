@@ -1,2 +1,2 @@
 #! /bin/bash
-sudo python wiskey.py -a halfoz & sudo python vodka.py -a oneoz
+sudo python ../bottles/wiskey.py -a oneoz & sudo python ../bottles/vodka.py -a oneoz
