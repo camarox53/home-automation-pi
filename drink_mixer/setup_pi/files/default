@@ -1,0 +1,32 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /home/pi/piscripts/drink_mixer/html/
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /home/pi/piscripts/drink_mixer/html/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /home/pi/piscripts/drink_mixer/cgi-bin/
+	<Directory "/home/pi/piscripts/drink_mixer/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		AddHandler cgi-script .py .sh
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
