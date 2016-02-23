@@ -1,1 +1,4 @@
 The script located in this directory will be a script to setup a raspberry pi for this project from scratch. 
+
+
+# sudo vim /etc/apache2/sites-available/default
