@@ -1,5 +1,6 @@
-# piscripts
-Rasperry Pi Scripts
+# Drink Mixer 5000 V1.0
+
+OverView of the project:
 
 Bottles:
 * Contain the scripts for pumping from bottles based on amount given
