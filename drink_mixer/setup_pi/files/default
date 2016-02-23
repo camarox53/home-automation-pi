@@ -4,7 +4,11 @@
 	DocumentRoot /home/pi/piscripts/drink_mixer/html/
 	<Directory />
 		Options FollowSymLinks
-		AllowOverride None
+		#AllowOverride None
+		AuthType Basic
+        	AuthName "Restricted Content"
+        	AuthUserFile /etc/apache2/.htpasswd
+        	Require valid-user
 	</Directory>
 	<Directory /home/pi/piscripts/drink_mixer/html/>
 		Options Indexes FollowSymLinks MultiViews
