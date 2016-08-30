@@ -7,22 +7,34 @@
     yum: name=httpd state=latest
 
   - name: Configure httpd
-    template: src=../files/default dest=/etc/apache2/sites-available/default
-    template: src=../../html/index.html dest=/etc/apache2/
-    template: src=../files/.htpasswd dest=/etc/apache2/.htpasswd
+    template: src=../files/default dest=/etc/httpd/conf/httpd.conf
+  
+#  - name: Work   
+#    template: src=../../html/index.html dest=/var/www/html/index.html
+  
+  - name: Work 
+    template: src=../files/.htpasswd dest=/etc/httpd/.htpasswd
 
   - name: ensure httpd is running and enabled
     service: name=httpd state=started enabled=yes
 
-  - name: Configure sudoers
-    copy: ../files/sudoers /etc/sudoers.d/sudoers
-    command: wget https://launchpad.net/~cumorris/+sshkeys
-
-  - name: Configure pi SSH keys
-    file: path=/home/pi/.ssh state=directory mode=0755
-    file: path=/home/pi/.ssh/authorized_keys owner=pi group=pi mode=0644
-    copy: +sshkeys /home/pi/.ssh/authorized_keys
-    copy: +sshkeys /home/root/.ssh/authorized_keys
+#  - name: Configure sudoers
+#    copy: ../files/sudoers /etc/sudoers.d/sudoers
+  
+#  - name: Install keys
+#    command: wget https://launchpad.net/~cumorris/+sshkeys
+#
+#  - name: Configure pi SSH keys
+#    file: path=/home/pi/.ssh state=directory mode=0755
+# 
+#  - name: Work   
+#    file: path=/home/pi/.ssh/authorized_keys owner=pi group=pi mode=0644
+# 
+#  - name: Do work   
+#    copy: +sshkeys /home/pi/.ssh/authorized_keys
+# 
+#  - name: work  
+#    copy: +sshkeys /home/root/.ssh/authorized_keys
 
   - name: configure log file
     file: path=/var/log/homeauto.log owner=www-data group=www-data mode=0644 
