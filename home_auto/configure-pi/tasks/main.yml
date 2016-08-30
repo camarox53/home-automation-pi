@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   tasks:
-  
+ 
   - name: Ensure apache is at the latest version
     yum: name=httpd state=latest
 
@@ -12,20 +12,20 @@
     template: src=../files/.htpasswd dest=/etc/apache2/.htpasswd
 
   - name: ensure httpd is running and enabled
-    service: name=httpd state=started enabled=yes 
+    service: name=httpd state=started enabled=yes
 
   - name: Configure sudoers
     copy: ../files/sudoers /etc/sudoers.d/sudoers
     command: wget https://launchpad.net/~cumorris/+sshkeys
 
   - name: Configure pi SSH keys
-    file: path=/home/pi/.ssh state=directory mode=0755 
-    file: path=/home/pi/.ssh/authorized_keys owner=pi group=pi mode=0644      
+    file: path=/home/pi/.ssh state=directory mode=0755
+    file: path=/home/pi/.ssh/authorized_keys owner=pi group=pi mode=0644
     copy: +sshkeys /home/pi/.ssh/authorized_keys
     copy: +sshkeys /home/root/.ssh/authorized_keys
 
   - name: configure log file
-    file: path=/var/log/homeauto.log owner=www-data group=www-data mode=0644    
+    file: path=/var/log/homeauto.log owner=www-data group=www-data mode=0644 
   
   handlers:
     - name: restart httpd
