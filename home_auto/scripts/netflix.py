@@ -3,7 +3,7 @@
 from phue import Bridge
 import random
 
-b = Bridge('192.168.1.109') 
+b = Bridge('192.168.1.124') 
 
 lights = b.get_light_objects()
 

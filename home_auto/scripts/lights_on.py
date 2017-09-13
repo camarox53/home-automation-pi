@@ -4,9 +4,9 @@ print "Bedroom lights on"
 
 from phue import Bridge 
 
-b = Bridge('192.169.1.109')
+b = Bridge('192.169.1.110')
 
-#b.connect()
+b.connect()
 
 b.set_light([1,2,3,4,5],'on',True)
 

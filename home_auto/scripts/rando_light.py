@@ -1,21 +1,20 @@
 #!/usr/bin/python
 from phue import Bridge
 import random
-
-b = Bridge('192.168.1.109') # Enter bridge IP here.
+b = Bridge('192.168.1.110') # Enter bridge IP here.
 
 #If running for the first time, press button on bridge and run with b.connect() uncommented
 #b.connect()
 
 lights = b.get_light_objects()
 
-#for light in lights:
-#        light.brightness = 254
-#        light.xy = [random.random(),random.random()]
+for light in lights:
+        light.brightness = 254
+        light.xy = [random.random(),random.random()]
 
-for light in lights: 
-    light.brightness = 155 
-    light.xy = [0.3,0.3]
+#for light in lights: 
+#    light.brightness = 155 
+#    light.xy = [0.3,0.3]
 
 
 # yellow = 0.5,0.5
