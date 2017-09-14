@@ -10,8 +10,8 @@ lights = b.get_light_objects()
 
 for light in lights:
         light.on = True
-	light.brightness = 254
-        light.xy = [0.3,0.3]
+	light.brightness = 155
+        light.xy = [0.7,0.6]
 
 #for light in lights: 
 #    light.brightness = 155 

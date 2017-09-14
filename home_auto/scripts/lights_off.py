@@ -9,10 +9,9 @@ b = Bridge('192.168.1.110') # Enter bridge IP here.
 lights = b.get_light_objects()
 
 for light in lights:
-        light.on = True
-	light.brightness = 254
-        light.xy = [0.3,0.3]
-
+        #light.brightness = 0
+        #light.xy = [0.0,0.0]
+	light.on = False
 #for light in lights: 
 #    light.brightness = 155 
 #    light.xy = [0.3,0.3]
